@@ -12,8 +12,8 @@ iRay  | Programming
 
 local Release = "Beta"
 local NotificationDuration = 6.5
-local RayfieldFolder = "GoingRogue"
-local ConfigurationFolder = RayfieldFolder.."/Configurations"
+local GoingRogueFolder = "GoingRogue"
+local ConfigurationFolder = GoingRogueFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 
 
@@ -881,10 +881,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 	LoadingFrame.Subtitle.TextTransparency = 1
 	Main.Shadow.Image.ImageTransparency = 1
 	LoadingFrame.Version.TextTransparency = 1
-	LoadingFrame.Title.Text = Settings.LoadingTitle or "Rayfield Interface Suite"
-	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
-	if Settings.LoadingTitle ~= "Rayfield Interface Suite" then
-		LoadingFrame.Version.Text = "Rayfield UI"
+	LoadingFrame.Title.Text = Settings.LoadingTitle or "Rogue Master GUI"
+	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by GoingRogue"
+	if Settings.LoadingTitle ~= "Rogue Master GUI" then
+		LoadingFrame.Version.Text = "GoingRogue GUI"
 	end
 	Topbar.Visible = false
 	Elements.Visible = false
@@ -895,7 +895,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 		if not Settings.ConfigurationSaving.FileName then
 			Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
 		end
-		if not isfolder(RayfieldFolder.."/".."Configuration Folders") then
+		if not isfolder(GoingRogueFolder.."/".."Configuration Folders") then
 			
 		end
 		if Settings.ConfigurationSaving.Enabled == nil then
@@ -930,8 +930,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 			return
 		end
 		
-		if not isfolder(RayfieldFolder.."/Key System") then
-			makefolder(RayfieldFolder.."/Key System")
+		if not isfolder(GoingRogueFolder.."/Key System") then
+			makefolder(GoingRogueFolder.."/Key System")
 		end
 		
 		if Settings.KeySettings.GrabKeyFromSite then
@@ -947,8 +947,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Settings.KeySettings.FileName = "No file name specified"
 		end
 
-		if isfile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension) then
-			if readfile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension) == Settings.KeySettings.Key then
+		if isfile(GoingRogueFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension) then
+			if readfile(GoingRogueFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension) == Settings.KeySettings.Key then
 				Passthrough = true
 			end
 		end
@@ -1037,7 +1037,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					Passthrough = true
 					if Settings.KeySettings.SaveKey then
 						if writefile then
-							writefile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension, Settings.KeySettings.Key)
+							writefile(GoingRogueFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension, Settings.KeySettings.Key)
 						end
 						RayfieldLibrary:Notify({Title = "Key System", Content = "The key for this script has been saved successfully"})
 					end
