@@ -1,0 +1,398 @@
+getgenv().SecureMode = true
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UD92IlIllllII421248535IlIIIIIIIlllIlIIl/EEEE/main/.gitignore'))()
+local Window = Rayfield:CreateWindow({
+	Name = "Rogue Hub [Fort Martin]",
+	LoadingTitle = "Rogue Master GUI. [ADMIN]",
+	LoadingSubtitle = "by Going Rogue",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = nil, -- Create a custom folder for your hub/game
+		FileName = "Settings"
+	},
+	KeySystem = true, -- Set this to true to use our key system
+	KeySettings = {
+		Title = "Going Rogue",
+		Subtitle = "Key System",
+		Note = "It's a 1 time key! Go to are discord server to report bugs!",
+		FileName = "Key",
+		SaveKey = true,
+		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+		Key = "Deez"
+	}
+})
+
+local Tab = Window:CreateTab("Home", 5012544693) -- Title, Image
+local Paragraph = Tab:CreateParagraph({Title = "You're running Fort Martin", Content = "Version BETA"})
+local Paragraph = Tab:CreateParagraph({Title = "Supported Executors:", Content = "-Synapse X  -Krnl  -ScriptWare"})
+local Paragraph = Tab:CreateParagraph({Title = "GUI type:", Content = "ADMIN"})
+
+local Dropdown = Tab:CreateDropdown({
+	Name = "Diffrent Versions:",
+	Options = {"V4.0.0","V3.0.0","V2.0.0"},
+	CurrentOption = "V4.0.0",
+	Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Option)
+	  	  -- The function that takes place when the selected option is changed
+    	  -- The variable (Option) is a string for the value that the dropdown was changed to
+	end,
+})
+
+local Tab = Window:CreateTab("Miscellaneous", 6157200594)
+
+local Section = Tab:CreateSection("MPC getaway")
+
+local Button = Tab:CreateButton({
+	Name = "MPC undetain TP",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "Reseting and tping...",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PlayerHandler.RF.Reset:InvokeServer()
+wait(1.1)
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PlayerHandler.RF.Respawn:InvokeServer()
+wait(0.2)
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PlayerHandler.RF.Respawn:InvokeServer()
+wait(0.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-215.136826, 10.2285948, 1628.71802, 0.475295752, -5.86179716e-10, -0.879826069, -8.12481638e-10, 1, -1.10516019e-09, 0.879826069, 1.24012045e-09, 0.475295752)
+
+-- The function that takes place when the button is pressed
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "MPC undetain/force-reset",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "Reseting...",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PlayerHandler.RF.Reset:InvokeServer()
+wait(1.5)
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PlayerHandler.RF.Respawn:InvokeServer()
+wait(1)
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PlayerHandler.RF.Respawn:InvokeServer()
+	end,
+})
+
+local Section = Tab:CreateSection("FE Player")
+
+local Button = Tab:CreateButton({
+	Name = "God Mode",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "God Mode loaded!",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/FortMartinGodmode"))(' Watermelon ?')
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Icon Mobile",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "Icon set to mobile!",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+local args = {
+    [1] = "Mobile"
+}
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PlayerHandler.RF.SetPlatform:InvokeServer(unpack(args))
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Icon Desktop/PC",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "Icon set to Desktop/PC!",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+local args = {
+    [1] = "PC"
+}
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PlayerHandler.RF.SetPlatform:InvokeServer(unpack(args))
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Unanchored Parts",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "Unanchored Parts loading...",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+loadstring(game:HttpGet("https://pastebin.com/raw/WkZwcGjf", true))()
+	end,
+})
+
+local Tab = Window:CreateTab("TP places", 7199724739)
+
+local Section = Tab:CreateSection("TP places")
+
+local Tab = Window:CreateTab("Auto Jump", 7219199111    )
+
+
+local Dropdown = Tab:CreateDropdown({
+	Name = "Jumping Jacks",
+	Options = {"25 JJ's","50 JJ's","75 JJ's", "100 JJ's"},
+	CurrentOption = "None",
+	Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Option)
+	  	  -- The function that takes place when the selected option is changed
+    	  -- The variable (Option) is a string for the value that the dropdown was changed to
+	end,
+})
+
+local Dropdown = Tab:CreateDropdown({
+	Name = "Grammar Jacks",
+	Options = {"25 GJ's","50 GJ's","75 GJ's", "100 GJ's"},
+	CurrentOption = "None",
+	Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Option)
+	  	  -- The function that takes place when the selected option is changed
+    	  -- The variable (Option) is a string for the value that the dropdown was changed to
+	end,
+})
+
+local Dropdown = Tab:CreateDropdown({
+	Name = "Hell Jacks",
+	Options = {"25 HJ's","50 HJ's","75 HJ's", "100 HJ's"},
+	CurrentOption = "None",
+	Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Option)
+	  	  -- The function that takes place when the selected option is changed
+    	  -- The variable (Option) is a string for the value that the dropdown was changed to
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Stop all",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "Stopped JJ's, GJ's, and HJ's!",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()
+	end,
+})
+
+local Tab = Window:CreateTab("Script Hub", 6031075938)
+
+local Section = Tab:CreateSection("Admin scripts")
+
+local Button = Tab:CreateButton({
+	Name = "Infinite Yield",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "Infinite Yield loading...",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",true))()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "CMD-X",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "CMD-X loading...",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Fates-Admin",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "Fates-Admin loading...",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+	end,
+})
+ 
+local Button = Tab:CreateButton({
+	Name = "Owl-Hub",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "Owl-Hub loading...",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+	end,
+})
+
+local Section = Tab:CreateSection("Server Features")
+
+local Button = Tab:CreateButton({
+	Name = "Serverhop",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "Serverhopping...",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+    local m = {} for _, v in ipairs(game:GetService("\72\116\116\112\83\101\114\118\105\99\101"):JSONDecode(game:HttpGetAsync("\104\116\116\112\115\58\47\47\103\97\109\101\115\46\114\111\98\108\111\120\46\99\111\109\47\118\49\47\103\97\109\101\115\47" .. game.PlaceId .. "\47\115\101\114\118\101\114\115\47\80\117\98\108\105\99\63\115\111\114\116\79\114\100\101\114\61\65\115\99\38\108\105\109\105\116\61\49\48\48")).data) do if type(v) == "\116\97\98\108\101" and v.maxPlayers > v.playing and v.id ~= game.JobId then m[#m + 1] = v.id end end if #m > 0 then game:GetService("\84\101\108\101\112\111\114\116\83\101\114\118\105\99\101"):TeleportToPlaceInstance(game.PlaceId, m[math.random(1, #m)]) else return notify("\83\101\114\118\101\114\104\111\112","\67\111\117\108\100\110\39\116\32\102\105\110\100\32\97\32\115\101\114\118\101\114\46") end
+
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Rejoin",
+	Callback = function()
+		
+		Rayfield:Notify({
+    Title = "Alert",
+    Content = "Rejoining...",
+    Duration = 3,
+    Image = 4483362458,
+        Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Dismiss",
+            Callback = function()
+            end
+		},
+	},
+})
+		
+    local m = game:GetService("\84\101\108\101\112\111\114\116\83\101\114\118\105\99\101") local n = game:GetService("\80\108\97\121\101\114\115").LocalPlayer m:Teleport(game.PlaceId, n)
+
+	end,
+})
